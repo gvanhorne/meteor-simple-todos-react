@@ -2,7 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import React, { useState } from 'react';
 
 export const LoginForm = () => {
-    const [username, setUsername] = userState('');
+    const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
     const submit = e => {
@@ -29,7 +29,8 @@ export const LoginForm = () => {
               type="text"
               placeholder="Password"
               name="password"
-              requiredonChange={e => setPassword(e.target.value)}
+              required
+              onChange={e => setPassword(e.target.value)}
             />
 
             <button type="submit">Log In</button>
